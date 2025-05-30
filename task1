@@ -1,0 +1,39 @@
+import requests
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+
+API_KEY = 'adcce58e82ae13317f5420305b3e0306'
+CITY = 'Chennai'
+NUM_HOURS = 8  
+UNITS = 'metric'
+
+url = f'https://api.openweathermap.org/data/2.5/forecast?q={CITY}&appid={API_KEY}&units={UNITS}'
+
+response = requests.get(url)
+data = response.json()
+
+if response.status_code != 200 or 'list' not in data:
+    print("Error fetching weather data.")
+    print("Response:", data)
+else:
+    
+    times = []
+    temps = []
+
+    for entry in data['list'][:NUM_HOURS]:
+        time = datetime.strptime(entry['dt_txt'], '%Y-%m-%d %H:%M:%S')
+        temp = entry['main']['temp']
+        times.append(time)
+        temps.append(temp)
+
+
+    plt.figure(figsize=(10, 5))
+    sns.lineplot(x=times, y=temps, marker='o', color='blue')
+    plt.title(f'Temperature Forecast for {CITY} (Next {NUM_HOURS * 3} Hours)')
+    plt.xlabel('Time')
+    plt.ylabel('Temperature (°C)')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.grid(True)
+    plt.show()
