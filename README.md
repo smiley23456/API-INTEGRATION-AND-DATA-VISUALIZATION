@@ -12,7 +12,7 @@
 
 *MENTOR*: NEELA SANTOSH
 
-API Integration and Data Visualization Using Python
+DESCRIPTION OF MY TASK(API Integration and Data Visualization Using Python)
 
 This task focuses on developing practical skills in API integration and data visualization using Python. The main goal is to learn how to fetch real-time data from a public web API and represent that data graphically to gain useful insights. Specifically, I was tasked with retrieving weather data for the town of Anantapur from the OpenWeatherMap API and creating a visual representation of key weather parameters.
 
@@ -74,3 +74,7 @@ Performing climate trend analysis.
 
 Conclusion
 This task taught me how to fetch live weather data from a public API and display it using Python visualizations. It enhanced my understanding of integrating real-time data into applications, which is useful for many projects involving data analysis or user interfaces. Overall, it provided valuable practical experience in API handling and data visualization.
+
+#OUTPUT
+
+![Image](https://github.com/user-attachments/assets/eeb9231f-f400-4723-a583-6217ec054b86)
